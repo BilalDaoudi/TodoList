@@ -5,16 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
 </head>
 <body class="bg-gray-100">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <div>
+                
                 @if (session('success'))
                 <p class="mb-4 text-green-500 font-medium text-center">
                     {{ session('success') }}
                 </p>
                 @endif
+                
                 <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
                 <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Connexion à votre compte</h2>
                 <p class="mt-2 text-center text-sm text-gray-600">

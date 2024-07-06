@@ -14,15 +14,12 @@ class TodoListController extends Controller
         if (!auth()->check()) {
             return redirect()->route('login');
         }
-
         if ($date === NULL)
             $date = Carbon::now()->format('Y/m/d');
-
         $todolists = DB::table('todolists')
             ->where('user', Auth::user()->id)
             ->where('date', $date)
             ->get();
-        // dd($todolists);
         return view('todolist', compact('todolists'));
     }
 

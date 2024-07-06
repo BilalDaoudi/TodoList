@@ -18,7 +18,6 @@ class UserController extends Controller
     {
         $credentials = $request->only('username', 'password');
         $remember = $request->has('remember_me'); // Vérifie si la case à cocher "Se souvenir de moi" est cochée
-
         if (Auth::attempt($credentials, $remember)) { // Utilise le paramètre $remember pour se souvenir de l'utilisateur
             if ($remember) {
                 // Créer un cookie de rappel pour se souvenir de l'utilisateur
@@ -29,7 +28,6 @@ class UserController extends Controller
             return redirect()->route('todolist');
         }
         return back()->with('erreur', 'Nom d\'utilisateur ou mot de passe incorrect !');
-
         // $credentials = $request->only('username', 'password');
         // if (Auth::attempt($credentials)) {
         //     return redirect()->route('todolist');

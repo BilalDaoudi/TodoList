@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +8,6 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
-
 <body class="bg-gray-100">
     <nav class="bg-gray-800 p-4">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -22,23 +20,18 @@
     </nav>
     <div class="container mx-auto mt-8">
         <h1 class="text-2xl font-semibold">Welcome</h1>
-
         <div class="mt-4 m-2">
             <label for="date" class="block text-sm font-medium text-gray-700">Choose Date:</label>
             <input type="date" id="date" name="date" class="mt-1 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 block w-full" value="{{ date('Y-m-d') }}">
         </div>
-
         <div class="mt-4 m-2">
-
             <form action="{{ route('add') }}" method="post" class="mt-4 m-2">
                 @csrf
                 <input type="hidden" id="date_add" name="date_add" class="border border-gray-400 p-2 rounded-md mr-2" value="{{ date('Y-m-d') }}">
                 <input type="text" id="description" name="description" class="border border-gray-400 p-2 rounded-md mr-2 w-3/4" placeholder="Enter your todo">
                 <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded">Add Todo</button>
             </form>
-
         </div>
-
         <div class="mt-2 grid grid-cols-1 md:grid-cols-3 gap-4">
             <div class="bg-white p-4 rounded-md border border-gray-300 m-2">
                 <h2 class="text-lg font-semibold">Todo à saisir</h2>
@@ -88,7 +81,6 @@
                     @endforeach
                 </ul>
             </div>
-
             <div class="bg-white p-4 rounded-md border border-gray-300 m-2">
                 <h2 class="text-lg font-semibold">Todo validé</h2>
                 <ul class="mt-4">
@@ -105,7 +97,6 @@
                             @endforeach
                         </div>
                     </li>
-
                 </ul>
             </div>
         </div>

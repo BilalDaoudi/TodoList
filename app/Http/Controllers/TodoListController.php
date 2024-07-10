@@ -22,8 +22,6 @@ class TodoListController extends Controller
             ->get();
         return view('todolist', compact('todolists'));
     }
-
-
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -41,19 +39,16 @@ class TodoListController extends Controller
         ]);
         return redirect()->back()->with('success', 'Tâche ajoutée avec succès.');
     }
-
     public function delete($id)
     {
         DB::table('todolists')->where('id', $id)->delete();
         return redirect()->back()->with('success', 'Supprimé avec succès.');
     }
-
     public function valider($id)
     {
         DB::table('todolists')->where('id', $id)->update(['statut' => 'valider']);
         return redirect()->back()->with('success', 'Validé avec succès.');
     }
-
     public function play($id)
     {
         DB::table('todolists')->where('id', $id)->update(['statut' => 'encours']);

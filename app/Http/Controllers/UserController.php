@@ -13,7 +13,6 @@ class UserController extends Controller
     {
         return view('login');
     }
-
     public function login(Request $request)
     {
         $credentials = $request->only('username', 'password');
@@ -34,16 +33,13 @@ class UserController extends Controller
         // }
         // return back()->with('erreur', 'username or password incorrect !');
     }
-
     public function logout(Request $request)
     {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-
         return redirect()->route('login');
     }
-
     public function showInscriptionForm()
     {
         return view('inscription');
@@ -68,7 +64,6 @@ class UserController extends Controller
             'username.unique' => 'Ce nom d\'utilisateur est déjà utilisé.',
             'email.unique' => 'Cette adresse email est déjà utilisée.'
         ]);
-
         User::create([
             'username' => $request->username,
             'nom' => $request->nom,
@@ -76,7 +71,6 @@ class UserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-
         // You can customize the redirect route after registration
         return redirect('/login')->with('success', 'Inscription réussie !');
     }

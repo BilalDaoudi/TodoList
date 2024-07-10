@@ -5,26 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connexion</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
 </head>
 <body class="bg-gray-100">
     <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div class="max-w-md w-full space-y-8">
             <div>
-                
                 @if (session('success'))
                 <p class="mb-4 text-green-500 font-medium text-center">
                     {{ session('success') }}
                 </p>
                 @endif
-                
                 <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
                 <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">Connexion à votre compte</h2>
                 <p class="mt-2 text-center text-sm text-gray-600">
                     Ou
                     <a href="{{ url('/register') }}" class="font-medium text-indigo-600 hover:text-indigo-500">créez un nouveau compte</a>
                 </p>
-
             </div>
             <form class="mt-8 space-y-6" action="{{ url('/login') }}" method="POST">
                 @csrf
@@ -45,7 +41,6 @@
                         @endif
                     </div>
                 </div>
-
                 <div class="flex items-center justify-between">
                     <div class="flex items-center">
                         <input id="remember_me" name="remember_me" type="checkbox" class="h-4 w-4 text-indigo-600 focus:ring-indigo-500 border-gray-300 rounded">
@@ -54,7 +49,6 @@
                         </label>
                     </div>
                 </div>
-
                 <div>
                     <button type="submit" class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-lg text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">
                         <span class="absolute left-0 inset-y-0 flex items-center pl-3">
@@ -69,5 +63,4 @@
         </div>
     </div>
 </body>
-
 </html>

@@ -17,11 +17,9 @@ return new class extends Migration
             $table->foreignId('user')->constrained()->onDelete('cascade');
             $table->enum('statut', ['saisir', 'encours', 'valider'])->default('saisir');
             $table->text('description');
-            // Ajoutez d'autres colonnes au besoin
             $table->timestamps();
         });
     }
-
     /**
      * Reverse the migrations.
      */

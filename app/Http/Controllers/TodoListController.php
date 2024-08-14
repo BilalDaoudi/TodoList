@@ -9,8 +9,10 @@ use Illuminate\Support\Facades\DB;
 
 class TodoListController extends Controller
 {
+    
     public function index($date = NULL)
     {
+        
         if (!auth()->check()) {
             return redirect()->route('login');
         }
@@ -21,9 +23,12 @@ class TodoListController extends Controller
             ->where('date', $date)
             ->get();
         return view('todolist', compact('todolists'));
+        
     }
+    
     public function store(Request $request)
     {
+        
         $validatedData = $request->validate([
             'description' => 'required|string',
             'date_add' => 'required',
@@ -38,17 +43,21 @@ class TodoListController extends Controller
             'updated_at' => now(),
         ]);
         return redirect()->back()->with('success', 'Tâche ajoutée avec succès.');
+        
     }
+    
     public function delete($id)
     {
         DB::table('todolists')->where('id', $id)->delete();
         return redirect()->back()->with('success', 'Supprimé avec succès.');
     }
+    
     public function valider($id)
     {
         DB::table('todolists')->where('id', $id)->update(['statut' => 'valider']);
         return redirect()->back()->with('success', 'Validé avec succès.');
     }
+    
     public function play($id)
     {
         DB::table('todolists')->where('id', $id)->update(['statut' => 'encours']);

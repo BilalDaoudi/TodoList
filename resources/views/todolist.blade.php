@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todolist</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
+    
 <body class="bg-gray-100">
+    
     <nav class="bg-gray-800 p-4">
         <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
             <div class="text-white font-semibold mb-2 md:mb-0 md:mr-4">Todolist</div>
@@ -101,6 +103,7 @@
             </div>
         </div>
     </div>
+    
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             var dateAddInput = document.getElementById('date_add');
@@ -122,6 +125,7 @@
             window.location.href = url;
         });
     </script>
+    
 </body>
 
 </html>

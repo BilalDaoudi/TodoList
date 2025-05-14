@@ -6,22 +6,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 });
-
-
-
 // Auth routes
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login.form');
 Route::post('/login', [UserController::class, 'login'])->name('login');
 Route::get('/logout', [UserController::class, 'logout'])->name('logout');
-
-
-
 // Registration routes
 Route::get('/register', [UserController::class, 'showInscriptionForm'])->name('register.form');
 Route::post('/register', [UserController::class, 'register'])->name('register');
-
-
-
 // Todo list routes
 Route::prefix('todolist')->group(function () {
     Route::get('{date?}', [TodoListController::class, 'index'])->name('todolist');
